@@ -17,9 +17,9 @@ Minimum user stories:
 
 ## User stories Backlog
 
-displaying points on the screen
-multiple enemies and cats
-timer
+- displaying points on the screen
+- multiple enemies and cats
+- timer
 
 ## File structure
 
