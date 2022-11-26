@@ -11,11 +11,15 @@ Game's purpose and description
 
 Minimum user stories:
 
-- User can ...
+- user can see a start screen with instructions and a finish screen when he wins / loses
+- user can see a canvas with a dog and a cat appearing on the screen
+- colliding with dog makes user lose, with cat makes user win
 
 ## User stories Backlog
 
-- User can ...
+displaying points on the screen
+multiple enemies and cats
+timer
 
 ## File structure
 
