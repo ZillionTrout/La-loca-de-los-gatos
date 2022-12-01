@@ -13,13 +13,14 @@ class Player {
 
     moveLeft() {
         this.x = this.x - 15;
+        // this.image = './img/userizq.png';
     }
 
-    moveTop(){
+    moveUp(){
         this.y = this.y - 15;
     }
 
-    moveBottom(){
+    moveDown(){
         this.y = this.y + 15;
     }
 }

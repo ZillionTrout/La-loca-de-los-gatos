@@ -1,28 +1,39 @@
 
 //User
 const user = new Image();
-user.src = './img/user.png';
+user.src = './img/userder.png';
 
 //Cats
-const cat1 = new Imagen();
-cat1.src = './img/michi.png';
+const cat1 = new Image();
+cat1.src = './img/misiizq.png';
 
-// const cat2 = new Imagen();
-// cat2.src = 'img/michi.png';
+const cat2 = new Image();
+cat2.src = 'img/nekoizq.png';
 
-// const cat3 = new Imagen();
-// cat3.src = 'img/michi.png';
+const cat3 = new Image();
+cat3.src = 'img/eisenizq.png';
 
-// //Dogs
-// const dog1 = new Imagen();
-// dog1.src = '';
+const cat4 = new Image();
+cat4.src = 'img/eisen.png';
 
-// const dog2 = new Imagen();
+const cat5 = new Image();
+cat5.src = 'img/misi.png';
+
+const cat6 = new Image();
+cat6.src = 'img/neko.png';
+
+//Dogs
+const dog1 = new Image();
+dog1.src = './img/perrete.png';
+
+// const dog2 = new Image();
 // dog2.src = '';
 
-// const dog3 = new Imagen();
+// const dog3 = new Image();
 // dog3.src = '';
 
 const catsImages = [cat1, cat2, cat3];
+
+const catsImages2 = [cat4, cat5, cat6];
 
 // const dogsImages = [dog1, dog2, dog3];

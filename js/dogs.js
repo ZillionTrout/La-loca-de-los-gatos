@@ -1,13 +1,23 @@
 class Dog {
     constructor() {
-        this.x = Math.floor(Math.random() * 1000);
-        this.y = Math.floor(Math.random()* 500);
+        this.x = Math.floor(Math.random() * 1200);
+        this.y = Math.floor(Math.random()* 820);
         this.width = 100;
         this.height = 100;
-        this.image = catsImages;
+        this.image = dog1;
+        this.fallInterval = undefined;
     }
 
-    _assignImage() {
-        this.image = catsImages[Math.floor(Math.random() * catsImages.length)];
+    _fallUp() {
+        this.fallInterval = setInterval (() => {
+            if (this.y > -100) {
+                clearInterval(this.fallInterval);
+            }
+            this.y = this.y -1;
+        }, 10)
     }
+
+    // _assignImage() {
+    //     this.image = dogsImages[Math.floor(Math.random() * dogsImages.length)];
+    // }
 }
