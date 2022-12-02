@@ -60,24 +60,55 @@ class Game {
     this.ctx.clearRect(0, 0, 1200, 800);
   }
 
-  // _checkCollisions() {
-  //   this.cats.forEach((cat) => {  
-  //         if (this.user.x < this.cats.x + this.cats.width &&
-  //           this.user.x + this.user.width > this.cats.x &&
-  //           this.user.y < this.cats.y + this.cats.height &&
-  //           this.user.height + this.user.y > this.cats.y) {
-  //             this.points +1;
-  //           }
-  //       }); 
-  //     }
+  _checkCollisionsCat() {
+    console.log('Colision cat', this.points)
+    this.cats.forEach((cats) => {  
+          if ((this.user.x >= this.cats.x && this.user.x <= cats.x + cats.width ||
+            this.user.x + this.user.width >= this.cats.x && this.user.x + this.user.width <= cats.x + cats.width ||
+            cats.x >= this.user.x && cats.x <= this.user.x + this.user.width) &&
+            (this.user.y >= this.cats.y && this.user.y <= cats.y + cats.width ||
+              this.user.y + this.user.width >= this.cats.y && this.user.y + this.user.width <= cats.y + cats.width ||
+              cats.y >= this.user.y && cats.y <= this.user.y + this.user.width)){
+              this.points ++;            
+              let index = this.cats.indexOf(cats);
+              this.cats.splice(index, 1);
+            }
+            if (this.points > 9){
+              this._gameOver();
+            }
+        })
+      }
+
+      _checkCollisionsDog() {
+        console.log('Colision dog', this.points)
+        this.dogs.forEach((dogs) => {  
+              if ((this.user.x >= this.dogs.x && this.user.x <= dogs.x + dogs.width ||
+                this.user.x + this.user.width >= dogs.x && this.user.x + this.user.width <= dogs.x + dogs.width ||
+                dogs.x >= this.user.x && dogs.x <= this.user.x + this.user.width) &&
+      (this.user.y >= this.dogs.y && this.user.y <= dogs.y + dogs.width ||
+      this.user.y + this.user.width >= this.cats.y && this.user.y + this.user.width <= dogs.y + dogs.width ||
+      dogs.y >= this.user.y && dogs.y <= this.user.y + this.user.width)){
+                  this.points --;
+                  let index = this.dogs.indexOf(dogs);
+                  this.dogs.splice(index, 1);
+                }
+            }); 
+          }
   
+  _writeScore() {
+    this.ctx.fillStyle = "white";
+    this.ctx.font = "20px Verdana";
+    this.ctx.fillText(`Points: ${this.points}`, 1050, 750);
+  }
 
   _update() {
     this._clean();
     this._drawUser();
     this._drawCats();
     this._drawDogs();
-    // this._checkCollisions();
+    this._checkCollisionsCat();
+    this._writeScore();
+    this._checkCollisionsDog();
     window.requestAnimationFrame(() => this._update());
   };
 
@@ -102,17 +133,20 @@ class Game {
     });
   };
 
-  // _gameOver() {
-  //   clearInterval(this.generateInterval);
-  //   const losePage = document.getElementById('lose-page');
-  //   losePage.style = "display: flex";
-  //   const canvas = document.getElementById('canvas');
-  //   canvas.style = "display: none";
-  // }
+  _gameOver() {
+    clearInterval(this.generateInterval);
+    const winPage = document.getElementById('win-page');
+    winPage.style = "display: flex";
+    const canvas = document.getElementById('canvas');
+    canvas.style = "display: none";
+  }
 
   start() {
     this._assignControls();
     this._update();
     this._generateCats();
     this._generateCatsLeft();
-    this._generateDogs(); }}
+    this._generateDogs(); 
+    }
+
+  }

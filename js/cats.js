@@ -1,7 +1,7 @@
 class Cat {
     constructor() {
         this.x = Math.floor(Math.random() * -100);
-        this.y = Math.floor(Math.random()* 800);
+        this.y = Math.floor(Math.random()* 700);
         this.width = 100;
         this.height = 100;
         this.image = null;

@@ -1,7 +1,7 @@
 class Dog {
     constructor() {
         this.x = Math.floor(Math.random() * 1200);
-        this.y = 520;
+        this.y = 820;
         this.width = 100;
         this.height = 100;
         this.image = null;

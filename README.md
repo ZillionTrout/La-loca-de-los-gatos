@@ -19,7 +19,6 @@ Minimum user stories:
 
 - displaying points on the screen
 - multiple enemies and cats
-- timer
 
 ## File structure
 
