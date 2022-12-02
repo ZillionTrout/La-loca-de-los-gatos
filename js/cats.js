@@ -5,7 +5,7 @@ class Cat {
         this.width = 100;
         this.height = 100;
         this.image = null;
-        this.fallIntervall = undefined;
+        this.fallInterval = undefined;
     }
 
     _moveRight() {
@@ -24,7 +24,7 @@ class Cat {
 
 class CatDer {
     constructor() {
-        this.x = Math.floor(Math.random() * 1300);
+        this.x = 1300;
         this.y = Math.floor(Math.random()* 800);
         this.width = 100;
         this.height = 100;

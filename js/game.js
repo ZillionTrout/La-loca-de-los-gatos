@@ -26,13 +26,14 @@ class Game {
     }, 3000)
   }
 
-  //   _generateDogs() {
-  //   this.generateInterval = setInterval(() => {
-  //     const newDog = new Dog();
-  //     newDog._assignImage();
-  //     newDog._fallUp();
-  //   }, 1000)
-  // }
+    _generateDogs() {
+    this.generateInterval = setInterval(() => {
+      const newDog = new Dog();
+      newDog._assignImage();
+      newDog._fallUp();
+      this.dogs.push(newDog);
+    }, 3000)
+  }
 
   _drawCats() {
     this.cats.forEach((elem) => {
@@ -45,11 +46,11 @@ class Game {
     })
   }
 
-  // _drawDogs() {
-  //   this.dogs.forEach((elem) => {
-  //     this.ctx.drawImage(elem.image, elem.x, elem.y, elem.width, elem.height);
-  //   })
-  // }
+  _drawDogs() {
+    this.dogs.forEach((elem) => {
+      this.ctx.drawImage(elem.image, elem.x, elem.y, elem.width, elem.height);
+    })
+  }
 
   _drawUser() {
     this.ctx.drawImage(this.user.image, this.user.x, this.user.y, this.user.width, this.user.height);
@@ -59,13 +60,26 @@ class Game {
     this.ctx.clearRect(0, 0, 1200, 800);
   }
 
+  // _checkCollisions() {
+  //   this.cats.forEach((cat) => {  
+  //         if (this.user.x < this.cats.x + this.cats.width &&
+  //           this.user.x + this.user.width > this.cats.x &&
+  //           this.user.y < this.cats.y + this.cats.height &&
+  //           this.user.height + this.user.y > this.cats.y) {
+  //             this.points +1;
+  //           }
+  //       }); 
+  //     }
+  
+
   _update() {
     this._clean();
     this._drawUser();
     this._drawCats();
-    // this._drawDogs();
+    this._drawDogs();
+    // this._checkCollisions();
     window.requestAnimationFrame(() => this._update());
-  }
+  };
 
   _assignControls() {
     document.addEventListener('keydown', (event) => {
@@ -86,7 +100,7 @@ class Game {
           break;
       }
     });
-  }
+  };
 
   // _gameOver() {
   //   clearInterval(this.generateInterval);
@@ -101,6 +115,4 @@ class Game {
     this._update();
     this._generateCats();
     this._generateCatsLeft();
-    // this._generateDogs();
-  }
-}
+    this._generateDogs(); }}
