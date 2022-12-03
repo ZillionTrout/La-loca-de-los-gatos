@@ -25,7 +25,7 @@ class Cat {
 class CatDer {
     constructor() {
         this.x = 1300;
-        this.y = Math.floor(Math.random()* 800);
+        this.y = Math.floor(Math.random()* 700);
         this.width = 100;
         this.height = 100;
         this.image = null;

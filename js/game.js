@@ -92,6 +92,10 @@ class Game {
                   let index = this.dogs.indexOf(dogs);
                   this.dogs.splice(index, 1);
                 }
+                //USER PIERDE
+                // if (this.points < 1){
+                //   this._gameOverLose();
+                // }
             }); 
           }
   
