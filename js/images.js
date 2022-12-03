@@ -24,16 +24,13 @@ cat6.src = 'img/neko.png';
 
 //Dogs
 const dog1 = new Image();
-dog1.src = './img/perrete.png';
+dog1.src = './img/navi1.png';
 
 const dog2 = new Image();
-dog2.src = './img/perrete.png';
-
-const dog3 = new Image();
-dog3.src = './img/perrete.png';
+dog2.src = './img/navi2.png';
 
 const catsImages = [cat1, cat2, cat3];
 
 const catsImages2 = [cat4, cat5, cat6];
 
-const dogsImages = [dog1, dog2, dog3];
+const dogsImages = [dog1, dog2];
