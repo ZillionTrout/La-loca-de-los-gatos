@@ -6,7 +6,6 @@ class Cat {
         this.height = 100;
         this.image = null;
         this.fallInterval = undefined;
-        // this.collisionSound = new sound('/Sound/mixkit-sweet-kitty-meow-93.wav');
     }
 
     _moveRight() {

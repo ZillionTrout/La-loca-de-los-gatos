@@ -6,6 +6,7 @@ class Game {
     this.dogs = [];
     this.points = 0;
     this.generateInterval = null;
+    this.collisionSound = new sound('./Sound/meow.mp3');
   }
 
   _generateCats() {
@@ -71,6 +72,7 @@ class Game {
               this.points ++;            
               let index = this.cats.indexOf(cats);
               this.cats.splice(index, 1);
+              this.collisionSound.play();
             }
             if (this.points > 9){
               this._gameOver();

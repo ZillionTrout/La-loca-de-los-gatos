@@ -6,9 +6,9 @@ function sound(src) {
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
     this.play = function() { 
-    this.sound.play();
+        this.sound.play();
     };
     this.stop = function() {
-    this.sound.pause();
+        this.sound.pause();
     };
 }
