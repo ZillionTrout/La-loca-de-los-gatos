@@ -8,6 +8,7 @@ class Game {
     this.generateInterval = null;
     this.collisionSound = new sound('./Sound/meow.mp3');
     this.collisionSound2 = new sound('./Sound/ladrido.mp3');
+    this.musicBase = new sound('./Sound/music.mp3');
   }
 
   _generateCats() {
@@ -81,24 +82,24 @@ class Game {
         })
       }
 
-      _checkCollisionsDog() {
-        this.dogs.forEach((dogs) => {  
-              if ((this.user.x >= this.dogs.x && this.user.x <= dogs.x + dogs.width ||
-                this.user.x + this.user.width >= dogs.x && this.user.x + this.user.width <= dogs.x + dogs.width ||
-                dogs.x >= this.user.x && dogs.x <= this.user.x + this.user.width) &&
-      (this.user.y >= this.dogs.y && this.user.y <= dogs.y + dogs.width ||
-      this.user.y + this.user.width >= this.cats.y && this.user.y + this.user.width <= dogs.y + dogs.width ||
-      dogs.y >= this.user.y && dogs.y <= this.user.y + this.user.width)){
-                  this.points --;
-                  let index = this.dogs.indexOf(dogs);
-                  this.dogs.splice(index, 1);
-                  this.collisionSound2.play();
-                }
-                if (this.points < 0){
-                  this._gameOverLose();
-                }
-            }); 
-          }
+  _checkCollisionsDog() {
+    this.dogs.forEach((dogs) => {  
+          if ((this.user.x >= this.dogs.x && this.user.x <= dogs.x + dogs.width ||
+            this.user.x + this.user.width >= dogs.x && this.user.x + this.user.width <= dogs.x + dogs.width ||
+            dogs.x >= this.user.x && dogs.x <= this.user.x + this.user.width) &&
+            (this.user.y >= this.dogs.y && this.user.y <= dogs.y + dogs.width ||
+              this.user.y + this.user.width >= this.cats.y && this.user.y + this.user.width <= dogs.y + dogs.width ||
+              dogs.y >= this.user.y && dogs.y <= this.user.y + this.user.width)){
+              this.points --;
+              let index = this.dogs.indexOf(dogs);
+              this.dogs.splice(index, 1);
+              this.collisionSound2.play();
+            }
+            if (this.points < 0){
+              this._gameOverLose();
+            }
+        }); 
+      }
   
   _writeScore() {
     this.ctx.fillStyle = "white";
@@ -160,6 +161,7 @@ class Game {
     this._generateCats();
     this._generateCatsLeft();
     this._generateDogs(); 
+    this.musicBase.play();
     }
 
   }
