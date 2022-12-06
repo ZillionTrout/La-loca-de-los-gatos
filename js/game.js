@@ -61,7 +61,6 @@ class Game {
   }
 
   _checkCollisionsCat() {
-    console.log('Colision cat', this.points)
     this.cats.forEach((cats) => {  
           if ((this.user.x >= this.cats.x && this.user.x <= cats.x + cats.width ||
             this.user.x + this.user.width >= this.cats.x && this.user.x + this.user.width <= cats.x + cats.width ||
@@ -80,7 +79,6 @@ class Game {
       }
 
       _checkCollisionsDog() {
-        console.log('Colision dog', this.points)
         this.dogs.forEach((dogs) => {  
               if ((this.user.x >= this.dogs.x && this.user.x <= dogs.x + dogs.width ||
                 this.user.x + this.user.width >= dogs.x && this.user.x + this.user.width <= dogs.x + dogs.width ||
@@ -92,24 +90,23 @@ class Game {
                   let index = this.dogs.indexOf(dogs);
                   this.dogs.splice(index, 1);
                 }
-                //USER PIERDE
-                // if (this.points < 1){
-                //   this._gameOverLose();
-                // }
+                if (this.points < 0){
+                  this._gameOverLose();
+                }
             }); 
           }
   
   _writeScore() {
     this.ctx.fillStyle = "white";
-    this.ctx.font = "20px Verdana";
-    this.ctx.fillText(`Points: ${this.points}`, 1050, 750);
+    this.ctx.font = "25px Verdana";
+    this.ctx.fillText(`Kittens: ${this.points}`, 1050, 750);
   }
 
   _update() {
     this._clean();
-    this._drawUser();
     this._drawCats();
     this._drawDogs();
+    this._drawUser();
     this._checkCollisionsCat();
     this._writeScore();
     this._checkCollisionsDog();
@@ -141,6 +138,14 @@ class Game {
     clearInterval(this.generateInterval);
     const winPage = document.getElementById('win-page');
     winPage.style = "display: flex";
+    const canvas = document.getElementById('canvas');
+    canvas.style = "display: none";
+  }
+
+  _gameOverLose() {
+    clearInterval(this.generateInterval);
+    const losePage = document.getElementById('lose-page');
+    losePage.style = "display: flex";
     const canvas = document.getElementById('canvas');
     canvas.style = "display: none";
   }

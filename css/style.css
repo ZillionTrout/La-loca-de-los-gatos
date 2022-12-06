@@ -3,14 +3,49 @@
   padding: 0;
 }
 
-/* Basic styles, change according to your style */
-
-#start-page,
-#win-page
-/* #lose-page  */{
+#start-page{
   height: 800px;
   width: 1200px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  text-align: left;
+  margin: 0 auto;
+  border: 1px solid black;
+  margin-top: 30px;
+  background-image: url('fondomichis1.png');
+}
+
+body div section{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+  align-items: flex-end;
+  align-content: space-between;
+  margin-top: 300px;
+  margin-right: 200px;
+}
+
+#win-page {
+  height: 800px;
+  width: 1200px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: right;
+  margin: 0 auto;
+  border: 1px solid black;
+  margin-top: 30px;
+  background-image: url('fondowingame.png');
+}
+
+#lose-page {
+  height: 800px;
+  width: 1200px;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -18,21 +53,37 @@
   margin: 0 auto;
   border: 1px solid black;
   margin-top: 30px;
-  background-color: rgb(32, 32, 32);
+  background-image: url('losegame1.png');
 }
-
-#win-page {
-  display: none;
-}
-
 canvas {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: block;
   margin: 0 auto;
   margin-top: 30px;
+  border-image: url('borde.png');
+  background-image: url('fondo.png');
+  background-size: cover;
   margin-bottom: 50px;
-  background-image: url('./fondo.png');
 }
+
+button#start {
+  font-family: verdana;
+  font-weight: bold;
+  color: #460169 !important;
+  font-size: 30px;
+  text-shadow: 5px 2px 0px #B35CFF;
+  box-shadow: 0px 5px 9px #9500F9;
+  padding: 17px 40px;
+  border-radius: 40px;
+  border: 2px solid #5700A3;
+  background: #BA9FEE;
+  background: linear-gradient(to top, #BA9FEE, #8A30FF);
+  }
+button#start:hover {
+  color: #510D6A !important;
+  background: #A600CF;
+  background: linear-gradient(to top, #A600CF, #942DEE);
+  }
 
 /* Auxiliar classes */
 

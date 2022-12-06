@@ -1,6 +1,6 @@
 class Player {
     constructor(x, y, width, height) {
-    this.image = user;
+    this.image = userImages[0];
     this.x = x;
     this.y = y;
     this.width = width;
@@ -9,11 +9,12 @@ class Player {
 
     moveRight() {
     this.x = this.x + 15;
+    this.image = userImages[0];
     }
 
     moveLeft() {
         this.x = this.x - 15;
-        // this.image = './img/userizq.png';
+        this.image = userImages[1];
     }
 
     moveUp(){

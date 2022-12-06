@@ -1,7 +1,12 @@
 
 //User
-const user = new Image();
-user.src = './img/userder.png';
+const userDer = new Image();
+userDer.src = './img/userder.png';
+
+const userIzq = new Image();
+userIzq.src = './img/userizq.png';
+
+const userImages = [userDer, userIzq];
 
 //Cats
 const cat1 = new Image();
