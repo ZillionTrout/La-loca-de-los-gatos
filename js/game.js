@@ -78,6 +78,8 @@ class Game {
             }
             if (this.points > 9){
               this._gameOver();
+              this.collisionSound.stop();
+              this.collisionSound2.stop();
             }
         })
       }
@@ -97,6 +99,8 @@ class Game {
             }
             if (this.points < 0){
               this._gameOverLose();
+              this.collisionSound.stop();
+              this.collisionSound2.stop();
             }
         }); 
       }

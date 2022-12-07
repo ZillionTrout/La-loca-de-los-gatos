@@ -17,6 +17,10 @@
   background-image: url('fondomichis1.png');
 }
 
+body {
+  background-color: #460169;
+}
+
 body div section{
   display: flex;
   flex-direction: row;
