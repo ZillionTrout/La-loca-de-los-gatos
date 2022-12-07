@@ -9,13 +9,13 @@ class Cat {
     }
 
     _moveRight() {
-    this.fallInterval = setInterval(() => {
+        this.fallInterval = setInterval(() => {
         if (this.x > 1300) {
             clearInterval(this.fallInterval);
         }
-    this.x = this.x + 1;
-    }, 10)
-}
+        this.x = this.x + 1;
+        }, 10)
+    }
 
     _assignImageRight() {
         this.image = catsImages[Math.floor(Math.random()*catsImages.length)]
@@ -33,13 +33,13 @@ class CatDer {
     }
 
     _moveLeft() {
-    this.fallIntervall1 = setInterval(() => {
-        if (this.x > -100) {
-            clearInterval(this.fallInterval);
-        }
-    this.x = this.x - 1;
-    }, 10)
-}
+        this.fallIntervall1 = setInterval(() => {
+            if (this.x > -100) {
+                clearInterval(this.fallInterval);
+            }
+        this.x = this.x - 1;
+        }, 10)
+    }   
 
     _assignImageLeft() {
         this.image = catsImages2[Math.floor(Math.random()*catsImages2.length)]

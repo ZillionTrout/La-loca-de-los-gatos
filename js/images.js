@@ -34,6 +34,7 @@ dog1.src = './img/navi1.png';
 const dog2 = new Image();
 dog2.src = './img/navi2.png';
 
+//Arrays
 const catsImages = [cat1, cat2, cat3];
 
 const catsImages2 = [cat4, cat5, cat6];

@@ -17,7 +17,7 @@ class Game {
       newCat._assignImageRight();
       newCat._moveRight();
       this.cats.push(newCat);
-    }, 3000)
+    }, 2000)
   }
 
   _generateCatsLeft() {
@@ -26,7 +26,7 @@ class Game {
       newCat._assignImageLeft();
       newCat._moveLeft();
       this.cats.push(newCat);
-    }, 3000)
+    }, 2000)
   }
 
     _generateDogs() {
@@ -35,16 +35,11 @@ class Game {
       newDog._assignImage();
       newDog._fallUp();
       this.dogs.push(newDog);
-    }, 3000)
+    }, 2000)
   }
 
   _drawCats() {
     this.cats.forEach((elem) => {
-      // this.ctx.beginPath()
-      // this.ctx.fillStyle = "black";
-      // this.ctx.arc(elem.x, elem.y, elem.width, 0, 2 * Math.PI);
-      // this.ctx.fill();
-      // this.ctx.closePath()
       this.ctx.drawImage(elem.image, elem.x, elem.y, elem.width, elem.height);
     })
   }
@@ -77,12 +72,12 @@ class Game {
               this.collisionSound.play();
             }
             if (this.points > 9){
-              this._gameOver();
               this.collisionSound.stop();
               this.collisionSound2.stop();
+              this._gameOver();
             }
-        })
-      }
+      });
+    }
 
   _checkCollisionsDog() {
     this.dogs.forEach((dogs) => {  
@@ -98,9 +93,9 @@ class Game {
               this.collisionSound2.play();
             }
             if (this.points < 0){
-              this._gameOverLose();
               this.collisionSound.stop();
               this.collisionSound2.stop();
+              this._gameOverLose();
             }
         }); 
       }
@@ -167,5 +162,4 @@ class Game {
     this._generateDogs(); 
     this.musicBase.play();
     }
-
   }

@@ -1,4 +1,4 @@
-# Game name
+# La loca de los gatos
 
 <!-- When you finish, add a nice screenshot of your game -->
 <!--[<img src="./img/page.png">]()-->
