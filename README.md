@@ -1,14 +1,14 @@
 # La loca de los gatos
 
-<img src="./img/page.png">
+This game is for my students at Ironhack, so that they have an example of the game they should do for module 1.
+
+<img src="./img/readme1.png">
 
 ## Description
 
-Game's purpose and description
+"La loca de los gatos" is a simple game where you have to catch the cute kittens to earn your crazy title. On the other hand if you pick up dogs you move away from your goal.
 
 ## User stories MVP
-
-Minimum user stories:
 
 - user can see a start screen with instructions and a finish screen when he wins / loses
 - user can see a canvas with a dog and a cat appearing on the screen
@@ -16,17 +16,20 @@ Minimum user stories:
 
 ## User stories Backlog
 
-- displaying points on the screen
-- multiple enemies and cats
+- New levels
+- Chronometer
 
 ## File structure
 
-- <code>game.js</code>: contains all the elements for the game to work. Methods: start(), \_update()
-- <code>scripts.js</code>: contains all the DOM manipulation code to start the game
+- <code>game.js</code>: contains all the elements for the game to work. Methods: generateCats(), generateCatsLeft(), generateDogs(), drawCats(), drawDogs(), drawUser(), clean(), checkCollisionsCat(), checkCollisionsDog(), writeScore(), update(), assignControls(), gameOver(), gameOverLose(), start().
+- <code>player.js</code>: constructor for the game. Methods: moveRight(), moveLeft(), moveUp(), moveDown().
+- <code>cats.js</code>: constructor for the cats. Methods: moveRight(), assignImageRight(), moveLeft(), assignImageLeft().
+- <code>dogs.js</code>: constructor for the dogs. Methods: fallUp(), assignImage().
+- <code>images.js</code>: contains the images and resources for the game.
 
 ## Useful links
 
-<!-- When you finish, add these links and commit -->
-
-- [Presentation slides]()
-- [Deployed game]()
+<ul>
+<li><a href="https://slides.com/estefaniaegeacalcena/deck">Presentation slides</a></li>
+<li><a href="https://zilliontrout.github.io/La-loca-de-los-gatos/">Deployed game</a></li>
+</ul>

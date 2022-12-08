@@ -17,7 +17,7 @@ class Game {
       newCat._assignImageRight();
       newCat._moveRight();
       this.cats.push(newCat);
-    }, 2000)
+    }, 3000)
   }
 
   _generateCatsLeft() {
@@ -26,7 +26,7 @@ class Game {
       newCat._assignImageLeft();
       newCat._moveLeft();
       this.cats.push(newCat);
-    }, 2000)
+    }, 3000)
   }
 
     _generateDogs() {
@@ -35,7 +35,7 @@ class Game {
       newDog._assignImage();
       newDog._fallUp();
       this.dogs.push(newDog);
-    }, 2000)
+    }, 3000)
   }
 
   _drawCats() {
