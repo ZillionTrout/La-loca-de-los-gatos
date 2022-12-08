@@ -1,6 +1,6 @@
 # La loca de los gatos
 
-<img src="./img/readme1.png">
+<img src="./img/page.png">
 
 ## Description
 
@@ -29,4 +29,4 @@ Minimum user stories:
 <!-- When you finish, add these links and commit -->
 
 - [Presentation slides]()
-- <link src="https://zilliontrout.github.io/La-loca-de-los-gatos/">
+- [Deployed game]()
